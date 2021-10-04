@@ -1,0 +1,65 @@
+{% include 'custom_image'%}
+{% schema %}
+  {
+    "name": "Image Section",
+    "settings": [
+	{
+		"type":"image_picker",
+		"id":"image_id",
+		"label":"custom image"
+
+	}
+], 
+ 
+	"blocks":
+	[
+		{
+		
+          "type": "gallery",
+          "name": "custom_Image",
+			"settings":[
+
+             
+
+              {
+                "type": "image_picker",
+                "id": "custom_img",
+                "label": "Gallery Image"
+              },
+				
+			{
+                "type":"url",
+                "id":"image_url",
+                "label":"Gallery Image Url"
+  			}
+
+             
+			]
+		}
+			
+		
+	],
+	
+	"presets":[
+		{
+			"name":"Custom Image",
+			"category":"Custom",
+			"blocks":[
+				{
+					"type":"gallery"
+				},
+				{
+					"type":"gallery"
+				
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

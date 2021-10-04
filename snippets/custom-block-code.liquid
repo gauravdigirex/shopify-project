@@ -1,0 +1,21 @@
+{% if section.settings.enabletext %}
+
+<div style = "text-align: {{section.settings.text_position}}">{{ section.settings.textid }}</div>
+
+{%endif%}
+
+{% if section.settings.myimage%}
+	<img src = {{section.settings.myimage | img_url: '600x'}} />
+{%endif%}
+
+<div class="gallery" style="display:flex">
+	{% for block in section.blocks%}
+  		<div class = "gallery_item" style="display:flex">
+  			{% if block.settings.enable_gallery_img %}
+          		<a href = {{ block.settings.image_url}}>
+          			<img src = {{ block.settings.gallery_img | img_url:'400x' }}/>
+                </a>
+          	{% endif %}
+  		</div>
+  	{%endfor%}
+</div>

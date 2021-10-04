@@ -1,0 +1,75 @@
+{%include 'custom-text'%}
+{% schema %}
+  {
+    "name": "Custom Text",
+    "settings": [
+	{
+		"type":"text",
+		"id":"custom_text",
+		"label":"Enter Text",
+		"default": "Hello"
+	},
+	{
+          "type": "checkbox",
+          "id": "enabletext",
+          "label": "Enter Text",
+          "default": true
+	}
+
+],
+	"blocks":
+	[
+		{
+		
+          "type": "gallery",
+          "name": "HDFC_Gallery",
+			"settings":[
+
+              {
+                "type": "checkbox",
+                "id": "enable_hdfc_img",
+                "label": "Enable Gallery Image",
+                "default": false
+
+              },
+
+              {
+                "type": "image_picker",
+                "id": "hdfc_img",
+                "label": "Gallery Image"
+              },
+
+              {
+                "type": "url",
+                "id": "image_url", 
+                "label": "HDFC Gallery Image URL"
+              }
+			]
+		}
+			
+		
+	],
+	
+	"presets":[
+		{
+			"name":"Custom Gallery",
+			"category":"Custom",
+			"blocks":[
+				{
+					"type":"gallery"
+				},
+				{
+					"type":"gallery"
+				
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,82 @@
+{% include "custom-block-code" %}
+
+{% schema %}
+  {
+    "name": "Gallery Section",
+    "settings": [
+		{
+          "type": "text",
+          "id": "textid",
+          "label": "Enter Text",
+          "default": "Shopify Liquid"
+		},
+
+		{
+          "type": "checkbox",
+          "id": "enabletext",
+          "label": "Enter Text",
+          "default": true
+		},
+    
+		{
+          "type": "image_picker",
+          "id": "myimage",
+          "label": "Select Image"
+    	}
+],
+	"blocks":
+	[
+		{
+		
+          "type": "gallery",
+          "name": "Gallery",
+			"settings":[
+
+              {
+                "type": "checkbox",
+                "id": "enable_gallery_img",
+                "label": "Enable Gallery Image",
+                "default": false
+
+              },
+
+              {
+                "type": "image_picker",
+                "id": "gallery_img",
+                "label": "Gallery Image"
+              },
+
+              {
+                "type": "url",
+                "id": "image_url", 
+                "label": "Gallery Image URL"
+              }
+			]
+		}
+			
+		
+	],
+	
+	"presets":[
+		{
+			"name":"Custom Gallery",
+			"category":"Custom",
+			"blocks":[
+				{
+					"type":"gallery"
+				},
+				{
+					"type":"gallery"
+				
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

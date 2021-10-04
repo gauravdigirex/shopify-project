@@ -1,0 +1,68 @@
+<div class = "footer-section">
+  <div class = "container">
+   
+    <div class = "row row-cols-{{ section.settings.col_num}}">
+    	{% for block in section.blocks%}
+      		{% assign item  = block.settings %}
+      		{% if block.type == "link_list" %}
+      			<div class = "col">
+                  <h5>{{ item.title }}</h5>
+                  {% assign footer_linklist = item.menu %}
+                  <ul>
+                  	{%for link in linklists[footer_linklist].links %}
+                    	<li>
+                          <a href = "{{ link_url }}">{{link.title | escape }}</a>
+                    	</li>
+                    {%endfor %}
+                  </ul>
+      		</div>
+      	{%endif%}
+      	{%endfor%}
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Footer Setting",
+	"settings":
+	[
+		{
+			"type":"range",
+			"id": "col_num",
+			"default":3,
+			"min":2,
+			"max":6,
+			"label": "Number of column"
+		}
+	],
+
+	"blocks":[
+		{
+			"type": "link_list",
+			"name": "Navigation",
+			"settings":[
+				{
+					"type":"text",
+					"id":"title",
+					"label":"Title",
+					"default":"Quick Links"
+				},
+		
+				{
+					"type":"link_list",
+					"id": "Menu",
+					"label": "Menu"
+				}
+			
+			]
+		}
+	]
+    
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

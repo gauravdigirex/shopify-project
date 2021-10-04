@@ -1,0 +1,28 @@
+<div class = "product">
+  <div class = "page-width">
+    <h2 style = "text-align:center;font-size:50px;color:orange">{{product.title}}</h2>
+    <p>{{ product.description }}</p>
+    
+    {% for image in product.images %}
+    	<img src= {{ image | img_url | large}}/><br>
+    {% endfor %}
+    
+    {{ product.price | money }}<br>
+<!--  Without Rs. use this    -->
+<!--     {{product.price | money_without_currency}} -->
+    
+    
+    {{ product.handle}} <br>
+    {{ product.url}} <br>
+    
+    
+    {{ "Variants" }}<br>
+    {% for variant in product.variants %}
+    	{{ variant.title}}<br>
+    	{{ variant.price | money}}<br>
+    	
+    {% endfor %}
+    
+    
+  </div>
+</div>

@@ -1,0 +1,64 @@
+{% if section.settings.enabletext %}
+<div style = "background-color:#f2f2f2;background-color: #f2f2f2;
+    margin-left: 55px;
+    margin-right: 55px;
+    padding: 25px;
+    margin-top: 20px;
+    height: auto;
+    font-size: 25px;
+    font-weight: bold;">
+<div style = "text-align: {{section.settings.text_position}}">{{ section.settings.textid }}</div>
+  <div style = "text-align:center";>
+  	<input type="text" placeholder="What are you looking for?"name="search">
+    
+  </div>
+</div>
+{%endif%}
+{% schema %}
+  {
+    "name": "Custom page text",
+    "settings":
+[
+	{
+		"type": "text",
+		"id": "textid",
+		"label": "Enter Text",
+		"default": "Hi Gaurav"
+	},
+
+	{
+		"type": "checkbox",
+		"id": "enabletext",
+		"label": "Enter Text",
+		"default": true
+	
+	},
+	{
+		"type": "select",
+		"id": "text_position",
+		"label": "Position your Text",
+		"options":[
+			{"value": "left", "label": "Left"},
+			{"value": "center", "label": "Center"},
+			{"value": "right", "label": "Right"}
+		],
+		"default":"left"
+	}
+],
+
+	"presets":
+	[
+		{
+			"name": "My Custom Text",
+			"category": "Text"
+		}
+		
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

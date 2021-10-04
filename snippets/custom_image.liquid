@@ -1,0 +1,23 @@
+{% if section.settings.image_id%}
+	<img src = {{section.settings.image_id | img_url: '800x'}} />
+{%endif%}
+
+<div class="custom_img">
+	{% for block in section.blocks%}
+  		<div class = "custom_gallery" style = "width:100%;" >
+  			<img src = {{ block.settings.custom_img | img_url:'2000x' }}/>
+        </div>
+  		
+ 		 <div class = "text_img">
+            	<h2 class = "text_head">Menu Design</h2>
+                    <div class = "sub_title">
+          			Inviting human connection, inspiration and experimentation to push the boundaries of modern 
+                    design.
+        			  </div> 
+           				<a href = {{ block.settings.image_url}}>
+        				  <button class ="btn" style = "position:absolute;color:black;background:#fff;top:-230px;left:3%;">Shop Menu</button>
+        				</a>   
+      				</div>
+  		
+  	{%endfor%}
+</div>

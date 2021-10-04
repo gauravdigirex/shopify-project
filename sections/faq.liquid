@@ -1,0 +1,37 @@
+<div>
+	{% for block in section.blocks %}
+ 		<div>{{block.settings.title}}</div>
+  	{%endfor%}
+</div>
+{% schema %}
+  {
+    "name": "FAQ",
+	"blocks":[
+		{
+			"name": "FAQ Items",
+			"type": "faq",
+			"settings": [
+				{
+					"type":"text",
+					"id": "title",
+					"label":"Title",
+					"default":"FAQ Title Example"
+				},
+				{
+					"type":"richtext",
+					"id":"answer",
+					"label":"Answer"
+				}
+			]
+		
+		}
+	]
+    
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
